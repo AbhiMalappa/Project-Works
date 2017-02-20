@@ -75,5 +75,5 @@ run;
 
 proc logistic descending data = test;
 model logit_lawn_garden =logit_ logit_active_shoe logit_baby_personal_care logit_electronic_service logit_furniture logit_patio_furniture logit_household_supplies;
-run;
+run; 
 
