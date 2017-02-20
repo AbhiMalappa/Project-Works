@@ -1,3 +1,13 @@
+**Segmentation - Kmeans**
+proc fastclus data=active_cust maxclusters=4 maxiter=1000 converge=0 out=retail;
+    var baby_personal_care beauty_aids cards_books_mag consumer_electron 
+    food_beverage girls_apparel health_aid_otc home_decor home_improvement home_organization household_supplies 
+    intimate_apparel kitchen_tabletop licensed_sports linens_domestics mens_apparel
+    pharmacy school_office_sup small_electronics
+    sports_rec toys trim_a_tree womens_accessories ;
+run;
+
+
 **Survival Analysis**
 data shopko_sa;
     set sa_sa;
