@@ -48,9 +48,9 @@ corr <- function(directory, threshold = 0) {
   while (index <= length(files)) {
     completeCases <- complete(directory, index);
     
-    if (completeCases$nobs > threshold) {
+    if (completeCasesnobs > threshold) {
       data <- read.csv(files[index], comment.char = "");
-      correlationList <- c(correlationList, cor(data$sulfate, data$nitrate, use = "complete.obs"));
+      correlationList <- c(correlationList, cor(datasulfate, datanitrate, use = "complete.obs"));
     }
     index <- index + 1;
   }
