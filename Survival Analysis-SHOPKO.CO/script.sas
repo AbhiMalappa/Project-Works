@@ -1,3 +1,4 @@
+**Survival Analysis**
 data shopko_sa;
 set sa_sa;
 run;
@@ -21,4 +22,15 @@ gamma llogistic lnormal weibull exponential;
 run;
 
 proc means data = output; 
+run;
+
+** Marcom value **
+
+
+proc reg data = shopko_sa;
+model revenue = em1 em2 sms dm/vif collin;
+output out = marcom_resid p = Prev r = Rrev student = student;
+run;
+quit;
+proc means data = marcom_resid; 
 run;
