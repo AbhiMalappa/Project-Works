@@ -10,7 +10,7 @@ run;
 *Correlation check*
 
 Proc corr data=shopko_sa;
-  Var email_forward_rate email_unsub_rate email_engage_rate	distinct_store_visit_num	trans_num	item_num	item_distinct_num	item_amt_sum	net_amt_per_trans	item_per_trans	net_amt_per_item;
+  Var email_forward_rate email_unsub_rate email_engage_rate	distinct_store_visit_num trans_num	item_num item_distinct_num item_amt_sum	net_amt_per_trans item_per_trans net_amt_per_item;
 Run;
 
 * Correct collin by ridge reg *
@@ -79,7 +79,7 @@ run;
 proc means data = mg.segment1; var well_visits  exam_vca ; 
 run;
 proc reg data = mg.segment4 ;
-model well_visits =  exam_vca 	exam_comp_hi 	exam_comp_lo 	exam_vca_hi  tenure   
+model well_visits = exam_vca exam_comp_hi exam_comp_lo exam_vca_hi tenure   
 share_visit_boarding	any_puppy_kitten; 
 run; 
 
