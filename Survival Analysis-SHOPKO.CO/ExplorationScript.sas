@@ -10,12 +10,12 @@ run;
 *Correlation check*
 
 Proc corr data=shopko_sa;
-  Var email_forward_rate email_unsub_rate email_engage_rate	distinct_store_visit_num trans_num	item_num item_distinct_num item_amt_sum	net_amt_per_trans item_per_trans net_amt_per_item;
+  Var email_forward_rate email_unsub_rate email_engage_rate distinct_store_visit_num trans_num item_num item_distinct_num item_amt_sum	net_amt_per_trans item_per_trans net_amt_per_item;
 Run;
 
 * Correct collin by ridge reg *
 proc reg data = mg.segment3;
-model felv = flv_vca flv_comp_hi flv_comp_lo flv_vca_hi share_well_visits	share_visit_boarding any_puppy_kitten		
+model felv = flv_vca flv_comp_hi flv_comp_lo flv_vca_hi share_well_visits share_visit_boarding any_puppy_kitten		
 share_visit_food/collin; 	
 run;
 
