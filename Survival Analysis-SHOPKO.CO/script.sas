@@ -73,3 +73,30 @@ proc logistic descending data = test;
 model logit_lawn_garden =logit_ logit_active_shoe logit_baby_personal_care logit_electronic_service logit_furniture logit_patio_furniture logit_household_supplies;
 run; 
 
+
+** Elasticity Modeling **
+proc reg data = merge;
+model total_items = 
+recency
+response
+unique_sizes
+unique_depts
+tenure
+retained_flag
+cmpns
+pct_response
+hhage
+hhincome/collin;
+run; quit;
+
+** Calculating elasticity **
+
+proc reg data = mg.segment1; 
+  model well_visits =  exam_vca exam_comp_hi exam_comp_lo exam_vca_hi;
+run;
+proc means data = mg.segment1; var well_visits  exam_vca ; 
+run;
+proc reg data = mg.segment4 ;
+model well_visits = exam_vca exam_comp_hi exam_comp_lo exam_vca_hi tenure   
+share_visit_boarding	any_puppy_kitten; 
+run; 
