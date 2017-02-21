@@ -25,16 +25,12 @@ run;
 censored = 0;
 if tt1st_purch > 0 then censored = 1;
 run;
-
-
 proc lifereg data = sa_data;
     model tt1st_purch*censored(0) =
     discount dir_mail email1 hh_size hh_income / dist = exponential;
     output out = output p=median std = s; 
     where seg = 2;
 run;
-
-
 distribution choices;
     gamma llogistic lnormal weibull exponential;
 run;
@@ -44,7 +40,7 @@ run;
 
 
 
-** Marcom value **
+** Marcom Value **
 proc reg data = shopko_sa;
     model revenue = em1 em2 sms dm/vif collin;
     output out = marcom_resid p = Prev r = Rrev student = student;
