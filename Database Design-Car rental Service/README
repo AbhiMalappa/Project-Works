@@ -1,2 +1,10 @@
-Implemented Database Management System for a car rental service. 
-Created Relationships, Tables, Forms and Navigation menue for the ER model.
+Implemented Database Management System for a car rental company. 
+
+Designed a data warehouse using Kimball's methodology. 
+Created star schema for the entire company's business process.
+
+By answering several business questions, highlighted the ease with which analytics could 
+be implemented storing data in de-normalized form, 
+thereby justifying the importance of data warehouse to the company. 
+
+
