@@ -22,4 +22,3 @@ print("Place id", place_id)
 # Retrieving http://...
 # Retrieved 2101 characters
 # Place id ChIJJ8oO7_B_bIcR2AlhC8nKlok
-#
